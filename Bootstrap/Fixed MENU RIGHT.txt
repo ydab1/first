@@ -1,0 +1,5 @@
+core.js
+application.js
+bootstrap_affix.js
+docs.css
+bootstrap_responsive.css

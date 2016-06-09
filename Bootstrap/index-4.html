@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Index-4 (Bootstrap)</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <link href="css/docs.css" rel="stylesheet">
+  <link href="css/bootstrap_responsive.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+    <!--Здесь пошла навигация, где мы применяем классы navbar
+    and navbar-inverse-->
+    <div class="navbar_my navbar navbar-inverse navbar-fixed-top" id="navbar-real">
+          <!--navbar-fixed-top ЭТОТ КЛАСС ОТВЕЧАЕТ ЗА ФИКСАЦИЮ
+          СВЕРХУ НАШЕГО НАВИГАЦИОННОГО МЕНЮ
+          navbar-fixed-bottom - ФИКСАЦИЯ СНИЗУ
+          navbar-fixed-static-top - ФИКСАЦИЯ СВЕРХУ И РАСТЯГИВАЕТ МЕНЮ НА ВСЮ ШИРИНУ ЭКРАНА-->
+          <!--внтури навигации еще один контейнер для двух частей МЕНЮ: КНОПКИ И ПУНКТОВ-->
+          <div class="container">
+            <!--Две части навигации-->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+<!--кнопка которая вкл\выкл выдимость меню, #responsive-menu к этому айди будет обращаться кнопка, что бы показать скрыть меню-->
+<!--создаем еще один спан с бутстрап классом sr-only-->
+                <span class="sr-only">Open navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+<!--создали три иконбара из бутстрапа, это тот бутерброд что и на всех сайтах-->
+              </button>
+              <a href="#" class="navbar-brand logo_img"><span class="relative_img"><img src="img/bootstrap_logo_min.png" alt="logo"></span></a>
+<!--<a href="#" class="navbar-brand">Название компании</a> закоментили, потому что есть название сайта уже-->
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu"> <!--написали классы соответствующие бустрапу и задали id для обращение кнопки к этому меню-->
+              <ul class="nav navbar-nav">
+                <li><a href="#">Пункт 1</a></li>
+  <!--ВОТ ВЫПАДАЮЩЕЕ МЕНЮ-->
+<!-- добавляем класс дропдаун бутстраповский-->
+                <li class="dropdown">
+<!-- добавляем класс dropdown-toggle and data-toggle="dropdown"-->
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">BOOTSTRAP <i class="fa fa-angle-down"></i></b></a><!--класс caret добавляет иконку треугольника-->
+<!--lgdrop-menu - добавил свой класс что бы сделать li немного побольше-->
+                  <ul class="dropdown-menu lgdrop-menu">
+                    <li><a href="#carousel-uroki">Carousel(Слайды)</a></li>
+<!--Пытаюсь сделать для этого элемента 3-ий уровень
+angle-down класс добавил для того что бы переместить эту
+отдельную ссылку вправо от надписи BUTTONS-->
+                    <li class="dropdown clearfix">
+                      <a href="#button-uroki">Buttons</a><a href="#" class="dropdown-toggle angle-down" data-toggle="dropdown"><i class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu lgdrop-menu">
+                        <li><a href="#">Пункт 1</a></li>
+                        <li><a href="#">Пункт 2</a></li>
+                        <li><a href="#">Пункт 3</a></li>
+                        <li><a href="#">Пункт 4</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#dropdown-uroki">DropDown(выпадающее меню)</a></li>
+                    <li><a href="#tabs-uroki">Tabs(закладки)</a></li>
+                    <li><a href="#spoiler-uroki">Spoiler</a></li>
+                    <li><a href="#accordion-uroki">Accordion</a></li>
+                    <li><a href="#modal-uroki">Modal window(Модальное окно)</a></li>
+                    <li><a href="#forma-uroki">Форма авторизации</a></li>
+                    <li><a href="#progress-uroki">Progress bar(полоса загрузки)</a></li>
+<!--class divider add solid border(разделитель типа)-->
+                    <li class="divider"></li>
+<!--3-ИЙ УРОВЕНЬ ВЫПАДАЮЩЕГО МЕНЮ-->
+                    <li class="dropdown">
+  <!--Добавил глификонку с fontawesome-->
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Point 4 <i class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu lgdrop-menu">
+                        <li><a href="#">Пункт 1</a></li>
+                        <li><a href="#">Пункт 2</a></li>
+                        <li><a href="#">Пункт 3</a></li>
+                        <li><a href="#">Пункт 4</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+<!--ВОТ ВЫПАДАЮЩЕЕ МЕНЮ-->
+                <li><a href="#"><i class="fa fa-angle-double-up"></i> UP</a></li>
+                <li><a href="http://getbootstrap.com/">GET BOOTSTRAP</a></li>
+              </ul>
+
+<!--000000000000000000000000000000000000000000000000000-->     
+<!--ФОРМА АВТОРИЗАЦИИ В НАВИГАЦИИ-->
+
+<!--navbar-right - пристыковывает форму к правой части блока в которой находится форма -->
+              <form action="" class="navbar-form navbar-right hidden-sm">
+                <div class="form-group">
+<!--form-control - для выравнивания формы посередине блока навигационного меню, добавлять нужно во все инпуты-->
+                  <input type="text" class="form-control" placeholder="E-mail" value="">
+                  
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password" value="">
+                </div>
+                <button type="submit" class="btn btn-success">
+                 <i class="fa fa-sign-in"></i> Enter
+<!--Добавили иконку которая обозначает вход-->
+               </button>
+               <button type="submit" class="btn btn-success">
+                 <i class="fa fa-unlock-alt"></i> Forgot pass?
+               </button>
+              </form><!--закончилась form-->
+            </div><!--collapse navbar-collapse закончился блок с классом-->
+          </div><!--.container-->
+    </div><!--закончился .navbar-menu - блок навигационного меню-->
+
+
+<!--000000000000000000000000000000000000000000-->        
+<!--КАРУСЕЛЬ-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="carousel-uroki"></div>
+    <!--блок для ссылки на карусель-->
+    <div class="uroki">
+      <h1>CAROUSEL</h1>
+    </div>
+  </div>
+</div>
+
+<!--0000000000000000000000000000000000000000-->
+<!--ПОШЛА КАРУСЕЛЬ или СЛАЙДЕР--> 
+
+<div id="carousel" class="carousel slide">
+
+  <!--Индикаторы те кругленькие-->
+
+  <ol class="carousel-indicators">
+    <li class="active" data-target="#carousel" data-slide-to="0"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+    <li data-target="#carousel" data-slide-to="3"></li>
+  </ol>
+
+  <!--СЛАЙДЫ БЛОК-->
+
+  <div class="carousel-inner">
+    <!--Это контент слайдов 4 слайда -->
+    <div class="item active"><!--первый слайд будет активным по умолчанию-->
+<!--ЗДЕСЬ МОЖНО ПОМЕЩАТЬ ЛЮБОЙ КОНТЕНТ-->
+      <div class="imgi_1"></div>
+      <div class="carousel-caption"><!--блок названия слайда-->
+        <h3>Первый слайд</h3>
+        <p>Описание первого(1-ого) слайда</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="imgi_2"></div>
+      <div class="carousel-caption">
+        <!--<h3>Второй слайд</h3>-->
+        <!--<p>Описание второго(2-ого) слайда</p>-->
+      </div>
+    </div>
+    <div class="item">
+      <div class="imgi_3"></div>
+      <div class="carousel-caption">
+        <h3>Третий слайд</h3>
+        <p>Описание третьего(3-ого) слайда</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="imgi_4"></div>
+      <div class="carousel-caption">
+        <h3>Четвертый слайд</h3>
+        <p>Описание четвертого(4-ого) слайда</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Это те славнозв1сн1 стрелочки для переключения слайдов-->
+
+  <a href="#carousel" class="left carousel-control" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a href="#carousel" class="right carousel-control" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+  <!--Стрелочки закончились-->
+</div>
+
+
+<!--0000000000000000000000000000000000-->
+<!--КНОПКИ-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="button-uroki"></div>
+    <div class="uroki" id="button-uroki">
+      <h1>КНОПКИ, ГРУППЫ КНОПОК и Всплывающие подсказки</h1>
+    </div>
+
+    <p>
+    <!--data-toggle="tooltip" бутстраповскому скрипту дали типа команду, что здесь будет всплывать подсказка-->
+    <!--title="Это кнопка, а ты жми!" - это будет всплывающая подсказка-->
+    <!--data-placement="bottom" это положение подсказки-->
+      <button type="button" class="btn btn-default" 
+        data-toggle="tooltip" 
+        data-placement="bottom" 
+        title="Это кнопка,а ты жми!"
+        data-trigger="click"
+      >
+        <i class="fa fa-spinner fa-spin"></i> 
+          КНОПКА
+      </button><!--btn - это стандартный класс для кнопки в Bootstrap-->
+      <!--btn-... это классы для кнопок с разынми цветами-->
+      <a href="#" class="btn btn-primary" data-toggle="tooltip" title="Это КНОПКА">КНОПКА</a>
+      <!--data-toggle="popover" title="Popup window" data-content="" - вот, что нужно для всплывающего окна подсказки-->
+      <button type="button" class="btn btn-success" 
+        data-toggle="popover" 
+        title="Окно подсказки"
+        data-placement="top"
+        data-trigger="hover" 
+        data-content="WhatsUP?+различные интересные штуки">
+        КНОПКА
+      </button>
+      <!--поменяли на баттон, поскольку ссылка со своим href="#" перебрасывает вначало страницы-->
+      <a href="#" class="btn btn-warning">КНОПКА</a>
+      <a href="#" class="btn btn-info">КНОПКА</a>
+      <a href="#" class="btn btn-danger">КНОПКА</a>
+      <a href="#" class="btn btn-link">КНОПКА</a>
+    </p>
+    <p>
+      <a href="#" class="btn btn-primary btn-lg">КНОПКА</a>
+      <a href="#" class="btn btn-primary">КНОПКА</a>
+      <a href="#" class="btn btn-primary btn-sm">КНОПКА</a>
+      <a href="#" class="btn btn-primary btn-xs">КНОПКА</a>
+
+    </div>
+  </div>
+
+  <!--ЭТО 9 урок про кнопки ГРУППЫ-->
+
+  <div class="container">
+    <div class="row">
+      <!--с помощью btn-toolbar размещает группы кнопок в столбец, а не в ряд-->
+      <div class="btn-toolbar">
+        <div class="btn-group"> <!--Группа для кнопок-->
+          <a href="#" class="btn btn-primary"><i class="fa fa-spinner"></i></a>
+          <a href="#" class="btn btn-success"><i class="fa fa-file"></i></a>
+          <a href="#" class="btn btn-warning"><i class="fa fa-download"></i></a>
+        </div>
+      </div>
+      <!--Второй тулбар, который будет уже со следующей строчки-->
+      <br>
+      <div class="btn-toolbar">
+        <!--btn-group-justified растягивает группу кнопок на всю ширину контейнера-->
+        <div class="btn-group btn-group-justified">
+          <a href="#" class="btn btn-primary"><i class="fa fa-spinner fa-spin"></i></a>
+          <a href="#" class="btn btn-success"><i class="fa fa-file"></i></a>
+          <a href="#" class="btn btn-warning"><i class="fa fa-download"></i></a>
+        </div>
+      </div>
+      <br>
+      <div class="btn-toolbar">
+<!--btn-group-vertical для отображение вертикально группы кнопок-->
+        <div class="btn-group btn-group-vertical btn-group-fixed-top">
+          <a href="#" class="btn btn-primary"><i class="fa fa-download"></i> Загрузка</a>
+          <a href="#" class="btn btn-success"><i class="fa fa-file"></i> Настройки</a>
+          <a href="#" class="btn btn-warning"><i class="fa fa-download"></i> Подключение Bootstrap`a</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+<!--00000000000000000000000000000000000-->
+<!--SIDEBAR WITH АККАРДЕОН-->
+
+<div class="container">
+  <div class="row">
+  <!--ПОШЕЛ АККОРДИОН-->
+      <div class="span3">
+       <div id="accordion" class="panel-group bs-docs-sidenav affix">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#collapse-1" data-parent="#accordion" data-toggle="collapse"><i class="fa fa-angle-double-down"></i> Элементы Bootstrap</a>
+            </h4>
+          </div>
+          <div id="collapse-1" class="panel-collapse collapse in">
+            <div class="panel-body">
+            <div class=""><!--ПОКА ЕЩЕ без КЛАССА-->
+                <ul class="nav nav-list">
+                  <li><a href="#carousel-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Carousel</a></li>
+                  <li><a href="#button-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Buttons</a></li>
+                  <li><a href="#dropdown-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Dropdown menu</a></li>
+                  <li><a href="#tabs-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Tabs</a></li>
+                  <li><a href="#spoiler-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Spoiler</a></li>
+                  <li><a href="#accordion-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Accordion</a></li>
+                  <li><a href="#modal-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Modal window</a></li>
+                  <li><a href="#forma-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Autorization form</a></li>
+                  <li><a href="#progress-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Progress bar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div> 
+    </div>  
+  </div><!--row-->
+</div><!--container-->
+
+
+<!--0000000000000000000000000000000000000-->
+<!--SIDEBAR-->
+
+ <!-- <div class="container">
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix">
+          <li><a href="#carousel-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Carousel</a></li>
+          <li><a href="#button-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Buttons</a></li>
+          <li><a href="#dropdown-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Dropdown menu</a></li>
+          <li><a href="#tabs-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Tabs</a></li>
+          <li><a href="#spoiler-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Spoiler</a></li>
+          <li><a href="#accordion-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Accordion</a></li>
+          <li><a href="#modal-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Modal window</a></li>
+          <li><a href="#forma-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Autorization form</a></li>
+          <li><a href="#progress-uroki"><i class="icon-chevron-right fa fa-arrow-left"></i> Progress bar</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>-->
+
+  <!--00000000000000000000000000000000000000000-->
+  <!--DROPDOWN 10-ый УРОК ПО BOOTSTRAP`У-->
+
+  <div class="container">
+    <div class="row wrapper">
+      <div class="first-block" id="dropdown-uroki"></div>
+      <div class="col-md-6">
+        <div class="uroki">
+          <h1>DROPDOWN</h1>
+        </div>
+        <!--в обычную группу кнопок добавляем кнопку в которой и будет наше выпадающее меню-->
+        <!--caret - это треугольник типа для выпадающего меню-->
+        <!--класс dropup меняет направление выскакивания меню-->
+        <div class="btn-group dropup">
+          <!--dropdown-toggle это класс для переключения состояний в BOOTSTRAP-->
+          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-download"></i> Скачать <span class="caret"></span>
+          </button>
+          <!--добавляем после кнопки список dropdown-menu-->
+          <ul class="dropdown-menu">
+            <li><a href="#">Повышение</a></li>
+            <li><a href="#">ПОвышение</a></li>
+            <li><a href="#">ПОВЫшение</a></li>
+            <li><a href="#">ПОВЫШЕНИЕ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!--в обычную группу кнопок добавляем кнопку в которой и будет наше выпадающее меню-->
+        <!--caret это треугольник типа для выпадающего меню-->
+        <!--dropup меняет направление выскакивания меню-->
+        <!--pull-right прижимает к провому краю блока-->
+        <div class="btn-group dropup pull-right">
+          <!--dropdown-toggle это класс для переключения состояний в BOOTSTRAP-->
+          <button class="btn btn-default">
+            <i class="fa fa-download"></i> Скачать
+          </button>
+          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+          </button>
+          <!--добавляем после кнопки список dropdown-menu-->
+          <!--dropdown-menu-right прижимает выпад. список к правому краю кнопки-->
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#">Повышение ПОВЫШЕНИЕ</a></li>
+            <li><a href="#">ПОвышение ПОВЫШЕНИЕ</a></li>
+            <li><a href="#">ПОВЫшение ПОВЫШЕНИЕ</a></li>
+            <li><a href="#">ПОВЫШЕНИЕ ПОВЫШЕНИЕ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--000000000000000000000000000000000000000-->
+  <!--TABS - СОЗДАНИЕ ВКЛАДОК-->
+
+  <div class="container">
+    <div class="row">
+      <div class="first-block" id="tabs-uroki"></div>
+      <div class="col-md-6">
+        <div class="uroki">
+          <h1>TABS</h1>
+        </div>
+        <div class="tabs">
+          <!--tabs определяет элемент закладок-->
+          <ul class="nav nav-tabs">
+            <!--active это -->
+            <!--естественно в ссылках должны стоять те идентификаторы что и в таб-пейнах, и не забыть написать data-toogle="tab"-->
+            <li class="active"><a href="#tab-1" data-toggle="tab">Tab1</a></li>
+            <li><a href="#tab-2" data-toggle="tab">Tab2</a></li>
+            <li><a href="#tab-3" data-toggle="tab">Tab3</a></li>
+          </ul>
+          <!--сколько вкладок столько и таб-пейнов(это контент)-->
+          <div class="tab-content">
+<!--fade - добавляет плавный переход в переключении табов
+  in - добавляем для того, что бы блок был сразу выявлен(показан)-->
+  <div class="tab-pane fade in active" id="tab-1">
+    <!--active будет выведен на экран при загрузке страницы-->
+    <p>Привет! Как САм?</p>
+  </div>
+  <div class="tab-pane fade" id="tab-2">
+    <p>Ничего так. Как сам, братан?</p>
+  </div>
+  <div class="tab-pane fade" id="tab-3">
+    <p>Вообще ништякы</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+
+</div><!--закончился .col-md-6-->
+</div>
+</div>
+
+
+
+<!--00000000000000000000000000000000000000000-->
+<!--СПОЙЛЕРЫ(BOOTSTRAP)-->
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="spoiler-uroki"></div>
+    <div class="col-md-6">
+      <div class="uroki">
+        <h1>СПОЙЛЕРЫ</h1>
+      </div>
+      <!--это кнопка которая имеет ссылку на идентификатор спойлера и будет открывать его соответственно-->
+      <!--для открытия инфы и скрытия используем data-toggle="collapse" в кнопке, collapse это класс блока нашего спойлера-->
+      <!--collapsed - класс добавялется сам при открытии и закрытии спойлера, но лучше его сразу написать-->
+      <a href="#spoiler-1" data-toggle="collapse" class="btn btn-primary spoiler collapsed">Спойлер</a>
+      <!--collapse - класс блока, который оборачивет наш спойлер-->
+      <div class="collapse" id="spoiler-1">
+        <div class="well"> <!--well - берет текст в рамочку-->
+          <p>Текст такой текст</p>
+        </div>
+      </div>
+    </div><!--закончился col-md-6-->
+    <div class="col-md-6"></div>
+  </div><!--.row-->
+</div><!--.container-->
+
+
+<!--00000000000000000000000000000000000-->
+<!--АККАРДЕОН-->
+
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="accordion-uroki"></div>
+    <div class="col-md-6">
+      <div class="uroki">
+        <h1>ACCORDION</h1>
+      </div>
+      <!--ПОШЕЛ АККОРДИОН-->
+      <div id="accordion1" class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#collapse-11" data-parent="#accordion1" data-toggle="collapse">Открыть 1-ый слайд</a>
+            </h4>
+          </div>
+          <div id="collapse-11" class="panel-collapse collapse in">
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus nulla, mollitia, explicabo dolor repellat officiis. Quasi repudiandae, pariatur nobis, omnis optio unde sequi at veniam, provident, tempore iusto voluptatibus voluptates!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <!--data-parent="#accordion1" класс для того что бы при открытии следующего акордика закрывался автоматом предидущий-->
+              <!--#accordion1 потому что фиксед меню справа тоже аккордион и там #accordion, поэтому поменял ссылку-->
+              <a href="#collapse-2" data-parent="#accordion1" data-toggle="collapse">Открыть 2-ой слайд</a>
+            </h4>
+          </div>
+          <div id="collapse-2" class="panel-collapse collapse">
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus nulla, mollitia, explicabo dolor repellat officiis. Quasi repudiandae, pariatur nobis, omnis optio unde sequi at veniam, provident, tempore iusto voluptatibus voluptates!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-success"><!--стиль кнопки аккордиона зеленый (panel-success)-->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a href="#collapse-3" data-parent="#accordion1" data-toggle="collapse">Открыть 3-ий слайд</a>
+            </h4>
+          </div>
+          <div id="collapse-3" class="panel-collapse collapse">
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus nulla, mollitia, explicabo dolor repellat officiis. Quasi repudiandae, pariatur nobis, omnis optio unde sequi at veniam, provident, tempore iusto voluptatibus voluptates!
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <div class="col-md-6"></div>    
+  </div>
+</div>
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<!--00000000000000000000000000000000000000000-->
+<!--МОДАЛЬНОЕ ОКНО-->
+
+<!--кроме того еще нужно создать кнопку, которая открывала бы модальное окно-->
+<!--data-toggle="modal" ссылается на блок с модальным окном-->
+<!--data-target="#modal-1" это ссылка на идентификатор модального окна-->
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="modal-uroki"></div>
+    <div class="col-md-12">
+      <div class="uroki">
+        <h1>МОДАЛЬНОЕ ОКНО</h1>
+      </div>
+      <button class="btn btn-success" type="button" data-toggle="modal" data-target="#modal-1">Открыть модальное окно</button>
+    </div>
+  </div>
+</div>
+<!--ОТСТУПЫ-->
+<br>
+<br>
+<br>
+<br>
+<!--ОТСТУПЫ-->
+<!--добавили класс fade для интерактивности, теперь окно выскакивает сверху с анимацией-->
+<div class="modal fade" id="modal-1">
+<!--modal-lg - контролирует ширину модального окна
+  modal-sm - маленькое-->
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--КНОПКУ поставил вначале перед заголовком окна, для того, что бы кнопка стояла ваше названия или как получиться в ряд-->
+        <button class="close" type="button" data-dismiss="modal">
+          <i class="fa fa-close"></i>
+        </button>
+        <h4 class="modal-title">Название модального окна</h4>
+      </div>
+      <div class="modal-body">
+        <p>Ничесе! Смотри это окно работает!!!</p>
+      </div>
+      <div class="modal-footer">
+        <!--Атрибут data-dismiss="modal" обращается к модальному окну для закрытия, и кнопка соответственно закрывает его-->
+        <button class="btn btn-danger" type="button" data-dismiss="modal">Закрыть окно</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--00000000000000000000000000000000000000-->
+<!--ФОРМА АВТОРИЗАЦИИ-->
+
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="forma-uroki"></div>
+    <div class="col-md-12">
+      <div class="uroki">
+        <h1>ФОРМА АВТОРИЗАЦИИ</h1>
+      </div>
+      <!--ФОРМА АВТОРИЗАЦИИИ-->
+      <form action="" class="navbar-form ">
+        <div class="form-group">
+          <!--form-control - для выравнивания формы посередине блока навигационного меню, добавлять нужно во все инпуты-->
+          <input type="text" class="form-control" placeholder="E-mail" value="">
+          <input type="password" class="form-control" placeholder="Password" value="">
+        </div>
+        <button type="submit" class="btn btn-success">
+         <i class="fa fa-sign-in"></i> Enter
+         <!--Добавили иконку которая обозначает вход-->
+       </button>
+       <button type="submit" class="btn btn-success">
+         <i class="fa fa-unlock-alt"></i> Forgot pass?
+       </button>
+     </form><!--закончилась form-->
+   </div>
+ </div>
+</div>
+
+
+<!--000000000000000000000000000000000000-->
+<!--ПРОГРЕССБАР-->
+
+<div class="container">
+  <div class="row">
+    <div class="first-block" id="progress-uroki"></div>
+      <div class="uroki">
+        <h1>PROGRESS BAR</h1>
+      </div>
+    <div class="progress"><!--тут будет наш прогрессбар-->
+      <div class="progress-bar progress-bar-primary" style="
+        min-width: 2%;
+        width: 27%;"> <!--тут мы указали в стилях ширину типа загружаемого прогресс бара, класс с primary естественно можно менять на саксес, дефолт и тд-->
+        27%
+      </div>
+      <div class="progress-bar progress-bar-success" style="
+        min-width: 2%;
+        width: 10%;"> 
+        37%
+      </div>
+      <div class="progress-bar progress-bar-danger" style="
+        min-width: 2%;
+        width: 10%;"> 
+        47%
+      </div>
+    </div>
+    <div class="progress">
+<!--progress-bar-striped добавляет на прогрессбар еще полосочки типа-->
+<!--active анимирует типа эти добавленные полосочки-->
+      <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 70%;">
+        
+      </div>
+    </div>
+  </div><!--row-->
+</div><!--container-->
+
+<!--0000000000000000000000000000000000000000000000000-->
+<!--ПОДСКАЗКИ И ВСПЛЫВАЮЩИЕ ФОРМЫ-->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap_affix.js"></script>
+<script src="js/application.js"></script>
+<!--<script src="js/core.js"></script>-->
+<!--пишем вспомогательный скрипт для всплывающей подсказки и окна подсказок-->
+<script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+</body>
+</html>
